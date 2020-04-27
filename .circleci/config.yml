@@ -49,11 +49,11 @@ jobs:
       - store_artifacts:
           path: unit_test_report
 
-      - run: mkdir codecoverage
       - run:
           name: Code coverage
           command: |
             . venv/bin/activate
+            mkdir codecoverage
             coverage report --fail-under=90 && coverage xml -o codecoverage/coverage.xml
       - store_test_results:
           path: codecoverage
