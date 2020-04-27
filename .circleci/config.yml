@@ -47,7 +47,7 @@ jobs:
             pytest --html=report.html
             coverage run -m pytest -v
       - store_artifacts:
-          path: testreport
+          path: report.html
 
       - run:
           name: Code coverage
