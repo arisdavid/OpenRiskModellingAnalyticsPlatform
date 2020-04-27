@@ -37,10 +37,13 @@ jobs:
       - run:
           name: Install dependencies
           command: |
+            python3 -m venv venv
+            . venv/bin/activate
             pip3 install coverage pytest pytest-html
       - run:
           name: Unittest
           command: |
+            . venv/bin/activate
             pytest --html=unit_test_report/report.html
             coverage run -m pytest -v
       - store_artifacts:
@@ -50,7 +53,8 @@ jobs:
       - run:
           name: Code coverage
           command: |
-            coverage report && coverage xml -o codecoverage/coverage.xml
+            . venv/bin/activate
+            coverage report --fail-under=90 && coverage xml -o codecoverage/coverage.xml
       - store_test_results:
           path: codecoverage
       - store_artifacts:
