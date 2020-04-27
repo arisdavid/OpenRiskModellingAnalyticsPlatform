@@ -41,10 +41,14 @@ jobs:
             . venv/bin/activate
             pip3 install coverage pytest
       - run:
-          name: Code coverage
+          name: Unittest
           command: |
             . venv/bin/activate
             coverage run -m pytest -v
+      - run:
+          name: Code coverage
+          command: |
+            . venv/bin/activate
             coverage report
             coverage html
       - store_artifacts:
