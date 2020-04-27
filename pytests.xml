@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="0" hostname="Aristotles-MBP" name="pytest" skipped="0" tests="1" time="0.028" timestamp="2020-04-27T16:21:47.060740"><testcase classname="test_dummy" file="test_dummy.py" line="0" name="test_dummy_method" time="0.000"></testcase></testsuite></testsuites>

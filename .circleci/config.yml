@@ -53,7 +53,7 @@ jobs:
           name: Code coverage
           command: |
             . venv/bin/activate
-            coverage report --fail-under=90 && coverage xml -o codecoverage/coverage.xml
+            pytest --junitxml=codecoverage/testsummary.xml
       - store_test_results:
           path: codecoverage
       - store_artifacts:
