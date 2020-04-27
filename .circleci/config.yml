@@ -49,14 +49,14 @@ jobs:
       - store_artifacts:
           path: unit_test_report
 
+      - run: mkdir test-results
       - run:
           name: Code coverage
           command: |
             . venv/bin/activate
-            coverage report
-            coverage xml
+            coverage report && coverage xml -o test-reports/coverage.xml
       - store_test_results:
-          path: coverage.xml
+          path: test-results
 
 workflows:
   version: 2
