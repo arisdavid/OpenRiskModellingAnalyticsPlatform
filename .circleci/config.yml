@@ -44,19 +44,19 @@ jobs:
           name: Unittest
           command: |
             . venv/bin/activate
-            pytest --html=unittest/report.html
+            pytest --html=unit_test_report/report.html
             coverage run -m pytest -v
       - store_artifacts:
-          path: unittest
+          path: unit_test_report
 
       - run:
           name: Code coverage
           command: |
             . venv/bin/activate
             coverage report
-            coverage html
+            coverage html -d coverage_report
       - store_artifacts:
-          path: htmlcov
+          path: coverage_report
 
 workflows:
   version: 2
