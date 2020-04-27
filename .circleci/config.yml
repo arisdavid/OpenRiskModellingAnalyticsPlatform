@@ -54,9 +54,9 @@ jobs:
           command: |
             . venv/bin/activate
             coverage report
-            coverage html -d coverage_report
-      - store_artifacts:
-          path: coverage_report
+            coverage xml
+      - store_test_results:
+          path: coverage.xml
 
 workflows:
   version: 2
