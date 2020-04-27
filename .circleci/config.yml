@@ -45,7 +45,7 @@ jobs:
           command: |
             . venv/bin/activate
             pytest --html=unit_test_report/report.html
-            coverage run -m pytest -v
+            coverage run -m pytest
       - store_artifacts:
           path: unit_test_report
 
@@ -53,7 +53,7 @@ jobs:
           name: Code coverage
           command: |
             . venv/bin/activate
-            pytest --junitxml=codecoverage/testsummary.xml
+            coverage run -m pytest --junitxml=codecoverage/testsummary.xml
       - store_test_results:
           path: codecoverage
       - store_artifacts:
